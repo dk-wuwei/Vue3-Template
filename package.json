@@ -2,6 +2,7 @@
   "name": "my-vue-app",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
@@ -31,6 +32,8 @@
     "vue-demi": "^0.13.11"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
     "@typescript-eslint/parser": "^5.56.0",
     "@vitejs/plugin-vue": "^4.1.0",
