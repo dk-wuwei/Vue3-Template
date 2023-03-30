@@ -28,7 +28,6 @@ export default defineConfig({
       branches: 75,
       statements: 75,
     },
-    open: true,
     include: ['./src/components/**/*.{test,spec}.ts'],
   },
 })

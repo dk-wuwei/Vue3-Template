@@ -2,7 +2,6 @@
   "name": "my-vue-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
@@ -11,13 +10,20 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "format": "prettier --write \"./**/*.{html,vue,ts,js,json,md}\"",
-    "lint": "eslint ./src --ext .vue,.ts,.tsx --fix"
+    "lint": "eslint ./src --ext .vue,.ts,.tsx --fix",
+    "commit": "git add . && git cz"
   },
   "lint-staged": {
     "*.{vue,tsx}": [
+      "pnpm run format",
       "pnpm run lint",
       "vitest related --run --coverage"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
     "@vue/devtools-api": "^6.5.0",
@@ -30,6 +36,7 @@
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitest/coverage-istanbul": "^0.29.7",
     "@vue/test-utils": "^2.3.2",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
